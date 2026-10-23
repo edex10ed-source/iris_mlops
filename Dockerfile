@@ -24,4 +24,4 @@ USER appuser
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "exec python -m uvicorn iris_mlops.api:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "exec fastapi run src/iris_mlops/api.py --port ${PORT:-8000}"]
