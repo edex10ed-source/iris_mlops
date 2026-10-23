@@ -22,7 +22,7 @@ ENV VIRTUAL_ENV="/app/.venv"
 
 RUN uv run preparar-datos && uv run entrenar
 
-RUN useradd --create-home appuser
+RUN useradd --create-home appuser && chown -R appuser:appuser /app/.venv
 USER appuser
 
 EXPOSE 8000
