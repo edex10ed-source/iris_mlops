@@ -18,6 +18,7 @@ RUN uv sync --locked --no-dev
 RUN uv run python -c "import sys, uvicorn; print('Python:', sys.executable); print('Uvicorn:', uvicorn.__file__)"
 
 ENV PATH="/app/.venv/bin:$PATH"
+ENV VIRTUAL_ENV="/app/.venv"
 
 RUN uv run preparar-datos && uv run entrenar
 
